@@ -1,0 +1,31 @@
+﻿@page "/examples/users"
+
+<h3>Users</h3>
+
+<button class="btn btn-primary" @onclick="ShowModal">Show Modal</button>
+
+<Modal @ref="myModal"
+       Title="Mi First Modal"
+       OnCancel="OnCloseModal"
+       OnConfirm="OnConfimModal">
+    I love Blazor
+</Modal>
+
+@code {
+    private Modal myModal;
+
+    private void ShowModal()
+    {
+        myModal.Show();
+    }
+
+    private void OnCloseModal()
+    {
+        myModal.Hide();
+    }
+    private void OnConfimModal()
+    {
+        //close the modal, but you can add any logic here.
+        myModal.Hide();
+    }
+}
